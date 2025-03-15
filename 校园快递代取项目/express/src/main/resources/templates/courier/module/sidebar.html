@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+    <div class="col-md-2"  th:fragment="html">
+        <ul class="nav nav-pills nav-stacked" id="nav">
+            <li id="dashboard-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/dashboard'}">仪表盘<i class="glyphicon glyphicon-dashboard pull-right"></i></a></li>
+            <li id="order-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/order'}">接单大厅<i class="glyphicon glyphicon-cloud-download pull-right"></i></a></li>
+            <li id="history-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/history'}">我的订单<i class="glyphicon glyphicon-list-alt pull-right"></i></a></li>
+            <li id="feedback-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/feedback'}">反馈建议<i class="glyphicon glyphicon-comment pull-right"></i></a></li>
+            <li id="evaluate-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/evaluate'}">评价中心<i class="glyphicon glyphicon-edit pull-right"></i></a></li>
+            <li id="info-sidebar"><a th:href="${#httpServletRequest.getContextPath()+'/courier/info'}">个人中心<i class="glyphicon glyphicon-cog pull-right"></i></a></li>
+            <li><a th:href="${#httpServletRequest.getContextPath()+'/logout'}">退出登录<i class="glyphicon glyphicon-log-out pull-right"></i></a></li>
+        </ul>
+    </div>
+</html>

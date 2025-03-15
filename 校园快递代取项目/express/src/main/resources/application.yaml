@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/express?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  thymeleaf:
+    cache: false
+  devtools:
+    add-properties: false
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.express.domain.bean
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+  type-enums-package: com.express.domain.enums
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+  # SQL 执行log，调试时可打开
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 项目配置
+project:
+  # 百度人脸识别
+  baidu:
+    aip:
+      app-id: 24741611
+      app-key: ufY7ofNPBgdNj0Q1qw9a6KCi
+      secret-key: NYuCzA5Mt2UTLfrdu1zDkhvduGG6zWQw
+      conn-timeout: 2000 # 连接超时ms，默认 2000
+      socket-timeout: 60000 # socket超时ms，默认60000
+      accept-score: 90 # 最低被接受的人脸置信分数[1,100]，分数越高，要求越严格，也越准确。
+
+# 服务启动
+server:
+  port: 8080
+  max-http-header-size: 8192
+  servlet:
+    context-path: /express
+    session:
+      timeout: 1800s
